@@ -11,10 +11,10 @@ function next() {
     api("scripts/backend/digibook/digibook.php", "digibook", "next", {id: cookie_pull("id")}, (success, result, error) => {
         if (success) {
             get("error").innerText = result;
-            content();
         } else {
             get("error").innerText = error;
         }
+        content();
     });
 }
 
@@ -22,10 +22,10 @@ function prev() {
     api("scripts/backend/digibook/digibook.php", "digibook", "previous", {id: cookie_pull("id")}, (success, result, error) => {
         if (success) {
             get("error").innerText = result;
-            content();
         } else {
             get("error").innerText = error;
         }
+        content();
     });
 }
 
