@@ -6,7 +6,7 @@ const DB_FILE = "../../../files/database.json";
 const BOOK_FILE = "../../../files/book.txt";
 
 $database = json_decode(file_get_contents(DB_FILE));
-$book = str_split(file_get_contents($database), 2000);
+$book = str_split(file_get_contents(BOOK_FILE), 1000);
 
 api("digibook", function ($action, $parameters) {
     global $database, $book;
@@ -37,7 +37,7 @@ api("digibook", function ($action, $parameters) {
                     }
                 }
                 save();
-                return [true, null];
+                return [true, "Page " . $database->{client_ip()}->ids->{$parameters->id}->page . " of " . count($book)];
             } else if ($action === "previous") {
                 if ($database->{client_ip()}->ids->{$parameters->id}->page > 0) {
                     $database->{client_ip()}->ids->{$parameters->id}->page--;
@@ -58,7 +58,10 @@ api("digibook", function ($action, $parameters) {
         save();
         return [false, $id];
     }
+    return [false, "UK"];
 }, true);
+
+echo json_encode($result);
 
 function client_ip()
 {

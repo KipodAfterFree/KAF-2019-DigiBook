@@ -5,3 +5,11 @@ body {
 #update {
     background-color: #aaaabb;
 }
+
+#content {
+    overflow-y: scroll;
+    align-content: baseline;
+    text-align: left;
+    text-align-last: left;
+    max-height: 60vh;
+}
