@@ -1,0 +1,29 @@
+<p>DigiBook reader v1.0.1</p>
+<div column>
+    <div id="home" column>
+        <p>Reading book.txt</p>
+        <p id="timer"></p>
+        <p id="error"></p>
+        <p id="content"></p>
+        <div row>
+            <button>Next Page</button>
+            <button>Previous Page</button>
+        </div>
+    </div>
+    <div id="update" column>
+        <p>An update is available!<br/>
+            Contact your admin and tell the to run<br/>
+            "digibook -d $PWD update -v 1.0.3 --force"<br/>
+            Version: v1.0.3<br/>
+            Changelog:<br/>
+            Fixed a possible page skip bug<br/>
+            Version: v1.0.2<br/>
+            Changelog:<br/>
+            Style fixes for home screen title being a little off<br/>
+            Version: v1.0.1<br/>
+            Changelog:<br/>
+            Added update popup
+        </p>
+        <button onclick="view('home')">Continue to book</button>
+    </div>
+</div>

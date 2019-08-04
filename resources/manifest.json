@@ -1,0 +1,22 @@
+{
+  "name": "DigiBook",
+  "short_name": "DigiBook",
+  "description": "Read our book online for free!",
+  "start_url": "../index.html",
+  "background_color": "#ffecb9",
+  "theme_color": "#ffecb9",
+  "display": "standalone",
+  "orientation": "natural",
+  "icons": [
+    {
+      "src": "../images/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "../images/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
