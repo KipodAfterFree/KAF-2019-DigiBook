@@ -31,7 +31,10 @@ function prev() {
 
 function content() {
     api("scripts/backend/digibook/digibook.php", "digibook", "read", {id: cookie_pull("id")}, (success, result, error) => {
-        if (success) get("content").innerText = result;
+        if (success)
+            get("content").innerText = result;
+        else
+            newSID();
     });
 }
 
