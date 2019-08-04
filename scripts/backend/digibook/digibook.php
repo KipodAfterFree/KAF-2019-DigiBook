@@ -6,7 +6,7 @@ const DB_FILE = "../../../files/database.json";
 const BOOK_FILE = "../../../files/book.txt";
 
 $database = json_decode(file_get_contents(DB_FILE));
-$book = str_split(file_get_contents(BOOK_FILE), 1000);
+$book = str_split(file_get_contents(BOOK_FILE), 500);
 
 api("digibook", function ($action, $parameters) {
     global $database, $book;
