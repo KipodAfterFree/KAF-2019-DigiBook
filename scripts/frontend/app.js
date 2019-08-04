@@ -39,8 +39,8 @@ function content() {
 }
 
 function newSID() {
-    api("scripts/backend/digibook/digibook.php", "digibook", "", {}, (success, result, error) => {
-        if (!success) cookie_push("id", error);
+    api("scripts/backend/digibook/digibook.php", "digibook", "id", {}, (success, result, error) => {
+        if (success) cookie_push("id", result);
         content();
     });
 }

@@ -41,11 +41,11 @@ api("digibook", function ($action, $parameters) {
             } else if ($action === "previous") {
                 if ($database->{client_ip()}->ids->{$parameters->id}->page > 0) {
                     $database->{client_ip()}->ids->{$parameters->id}->page--;
-                    save();
-                    return [true, null];
                 } else {
                     return [false, "Page 0"];
                 }
+                save();
+                return [true, "Page " . $database->{client_ip()}->ids->{$parameters->id}->page . " of " . count($book)];
             }
         } else {
             return [false, "ID not found at this household"];
@@ -56,10 +56,10 @@ api("digibook", function ($action, $parameters) {
         $database->{client_ip()}->ids->$id->time = 0;
         $database->{client_ip()}->ids->$id->page = 0;
         save();
-        return [false, $id];
+        return [true, $id];
     }
     return [false, "UK"];
-}, true);
+});
 
 echo json_encode($result);
 
