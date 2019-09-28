@@ -29,7 +29,7 @@ api("digibook", function ($action, $parameters) {
                         return [false, "End of book"];
                     }
                     if ($database->{client_ip()}->ids->{$parameters->id}->time < time()) {
-                        $database->{client_ip()}->ids->{$parameters->id}->time = time() + 60;
+                        $database->{client_ip()}->ids->{$parameters->id}->time = time() + 60 * 5;
                         $database->{client_ip()}->ids->{$parameters->id}->page++;
                         $database->{client_ip()}->page++;
                     } else {
